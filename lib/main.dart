@@ -3,6 +3,7 @@ import 'package:notes_app/app/injection_container.dart';
 import 'package:notes_app/core/router/app_router.dart';
 
 void main() async {
+  //inialize dependency injection
   WidgetsFlutterBinding.ensureInitialized();
   await init();
   runApp(const MyApp());

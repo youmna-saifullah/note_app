@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import 'package:get_it/get_it.dart';
@@ -23,7 +22,12 @@ final GoRouter appRouter = GoRouter(
     ),
     GoRoute(
       path: RouterNames.addNote,
-      builder: (context, state) => const AddNoteScreen(),
+      builder: (context, state) {
+        return ChangeNotifierProvider(
+          create: (_) => sl<NotesProvider>(),
+          child: const AddNoteScreen(),
+        );
+      },
     ),
   ],
 );
